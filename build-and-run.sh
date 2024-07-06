@@ -15,6 +15,7 @@ clang \
     -framework Cocoa \
     -framework GLUT \
     -framework OpenGL \
+    -Wall \
     libraylib.a "${MAIN_FILENAME}".c -o "${OUTDIR}"/"${MAIN_FILENAME}"
 
 # Run the program

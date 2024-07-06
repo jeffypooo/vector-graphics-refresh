@@ -9,6 +9,8 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
 
+    SetConfigFlags(FLAG_VSYNC_HINT);
+
     InitWindow(screenWidth, screenHeight, "raylib [core] example - 2d camera");
 
     Rectangle player = { 400, 280, 40, 40 };
@@ -37,7 +39,6 @@ int main(void)
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
 
-    SetTargetFPS(120);               // Set our game to run at 60 frames-per-second
 
     //--------------------------------------------------------------------------------------
 
@@ -112,7 +113,7 @@ int main(void)
             DrawText("- Mouse Wheel to Zoom in-out", 40, 60, 10, DARKGRAY);
             DrawText("- A / S to Rotate", 40, 80, 10, DARKGRAY);
             DrawText("- R to reset Zoom and Rotation", 40, 100, 10, DARKGRAY);
-            
+
         
         EndDrawing();
     }
