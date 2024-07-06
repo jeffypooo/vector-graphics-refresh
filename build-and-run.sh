@@ -1,16 +1,15 @@
 #!/bin/bash
 
 # Build raylib first
-# shellcheck disable=SC2034
-MACOSX_DEPLOYMENT_TARGET=10.9
-cd ./raylib/src || exit
+RAYLIB_SRC="./raylib/src"
+export MACOSX_DEPLOYMENT_TARGET=10.9
+cd "${RAYLIB_SRC}" || exit
 make
 cp libraylib.a ../../libraylib.a
 cd ../../
 
 
 MAIN_FILENAME=${1:-core_simple_window}
-
 OUTDIR="./bin"
 
 # Create output directory if it doesn't exist
@@ -24,7 +23,7 @@ clang \
     -framework Cocoa \
     -framework GLUT \
     -framework OpenGL \
-    -I./raylib/src \
+    -I"${RAYLIB_SRC}" \
     -Wall \
     libraylib.a "${MAIN_FILENAME}".c -o "${OUTDIR}"/"${MAIN_FILENAME}"
 

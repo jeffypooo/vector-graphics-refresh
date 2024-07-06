@@ -15,4 +15,5 @@ These examples should also work fine on Windows and Linux, but you will need to 
 
 ## Dependencies
 
-[Raylib](https://www.raylib.com/) is used for all graphics rendering. A static library for raylib is included in the root directory of this project.
+[Raylib](https://www.raylib.com/) is used for all graphics rendering. It is included in the project as 
+a submodule. The build script will build raylib from source as needed for you.
